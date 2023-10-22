@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ComparableProperty, Person } from "../../game/person.models";
+import { ComparableProperty, Person } from "../../models/person.models";
 import { filter, Observable, Subject, tap } from "rxjs";
 import { State } from "../../store/reducers/game.reducers";
 import { Store } from "@ngrx/store";

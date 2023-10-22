@@ -1,19 +1,19 @@
 import { createReducer, on } from '@ngrx/store';
 import * as VehicleInfoActions from '../actions/game.actions';
 import { InitialState } from "@ngrx/store/src/models";
-import { BasicPersonProperties, Person } from "../../game/person.models";
+import { BasicPersonProperties, Person } from "../../models/person.models";
 
 export const featureKey = 'game';
 
 export interface State {
-  people: Person[];
+  randomPeople: Person[];
   allPeople: BasicPersonProperties[];
   loading: boolean;
   error: string;
 }
 
 export const initialState: InitialState<State> = {
-  people: undefined,
+  randomPeople: undefined,
   loading: false,
   error: undefined
 };
@@ -33,9 +33,9 @@ export const reducer = createReducer(
       ...state,
       loading: initialState.loading
     })),
-  on(VehicleInfoActions.getRandomPeopleSuccess, (state, {people}) => ({
+  on(VehicleInfoActions.getRandomPeopleSuccess, (state, {randomPeople}) => ({
     ...state,
-    people
+    randomPeople
   })),
   on(VehicleInfoActions.getAllPeopleSuccess, (state, {allPeople}) => ({
     ...state,

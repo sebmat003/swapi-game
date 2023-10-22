@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Person } from "../../game/person.models";
+import { Person } from "../../models/person.models";
 
 @Component({
   selector: 'app-game-card',

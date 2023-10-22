@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { BasicPersonProperties, Person } from "../../game/person.models";
-import { SwapiPagedResponse, SwapiResponse } from "../../game/swapi.models";
+import { BasicPersonProperties, Person } from "../../models/person.models";
+import { SwapiPagedResponse, SwapiResponse } from "../../models/swapi.models";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()

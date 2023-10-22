@@ -9,12 +9,12 @@ import { selectAllPeopleIds } from "../selectors/game.selectors";
 
 @Injectable()
 export class GameEffects {
-  getPeople$ = createEffect(() => this.actions$.pipe(
+  getRandomPeople$ = createEffect(() => this.actions$.pipe(
     ofType(VehicleInfoActions.getRandomPeople),
     withLatestFrom(this.store.select(selectAllPeopleIds)),
     exhaustMap(([_, ids]) =>
       forkJoin(new Array(2).fill(undefined).map(() => this.gameHttpService.getPerson(this.getRandomId(ids)))).pipe(
-        map((response) => VehicleInfoActions.getRandomPeopleSuccess({people: response.map(res => res.result.properties)})),
+        map((response) => VehicleInfoActions.getRandomPeopleSuccess({randomPeople: response.map(res => res.result.properties)})),
         catchError((error: string) => of(VehicleInfoActions.getRandomPeopleFailure({error})))
       )
     )));
@@ -29,7 +29,6 @@ export class GameEffects {
   private getRandomId(ids: number[]): number {
     return ids[Math.floor(Math.random() * (ids.length - 1))];
   }
-
 
   constructor(private actions$: Actions, private gameHttpService: GameHttpService, private store: Store<State>) {
   }
