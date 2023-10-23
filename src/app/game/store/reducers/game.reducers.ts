@@ -1,13 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
 import * as VehicleInfoActions from '../actions/game.actions';
 import { InitialState } from "@ngrx/store/src/models";
-import { BasicPersonProperties, Person } from "../../models/person.models";
+import { BasicPerson, Person } from "../../models/person.models";
 
 export const featureKey = 'game';
 
 export interface State {
   randomPeople: Person[];
-  allPeople: BasicPersonProperties[];
+  allPeople: BasicPerson[];
   loading: boolean;
   error: string;
 }

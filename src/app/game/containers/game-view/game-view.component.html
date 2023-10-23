@@ -1,14 +1,14 @@
-<div class="container my-5 d-flex flex-column justify-content-center align-items-center">
-  <h1 class="mb-5">Swapi Game</h1>
+<div class="container my-3 d-flex flex-column justify-content-center align-items-center">
+  <h1 class="mb-3">Swapi Game</h1>
   <app-game-options [personProperty]="personPropertyControl"></app-game-options>
-  <button [disabled]="(loading$ | async) || form.invalid" class="btn btn-primary w-25 mb-5 d-block" (click)="startGame()">Play!</button>
+  <button [disabled]="(loading$ | async) || form.invalid" class="btn btn-primary w-25 mb-3 d-block" (click)="startGame()">Play!</button>
   <div class="col-12">
     <app-game-counter [roundWinner$]="winnerIndex$"></app-game-counter>
   </div>
   <ng-container *ngIf="!(loading$ | async); else loader">
     <ng-container *ngIf="currentPeople$ | async as currentPeople">
       <div class="row w-100">
-        <div *ngFor="let person of currentPeople; let i = index" class="col-12 col-md-6 mb-4">
+        <div *ngFor="let person of currentPeople; let i = index" class="col-12 col-md-6 mb-3">
           <app-game-card [person]="person" [index]="i" [winner]="winner && person.name === winner.name"></app-game-card>
         </div>
       </div>

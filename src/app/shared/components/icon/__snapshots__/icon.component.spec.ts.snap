@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconComponent Should match snapshot 1`] = `
+<app-icon
+  height={[Function Number]}
+  icon={[Function String]}
+  url={[Function String]}
+  width={[Function Number]}
+>
+  <svg
+    height="48"
+    width="48"
+  >
+    <use
+      xlink:href="assets/icons/icons.svg#person"
+    />
+  </svg>
+</app-icon>
+`;

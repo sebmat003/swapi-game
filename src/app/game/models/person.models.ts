@@ -1,13 +1,13 @@
-export interface BasicPersonProperties {
-  uid: string;
+export interface GeneralPersonData {
   name: string;
   url: string;
 }
 
-export interface Person extends BasicPersonProperties {
-  created: string;
-  edited: string;
-  films: string[];
+export interface BasicPerson extends GeneralPersonData{
+  uid: string;
+}
+
+export interface Person extends GeneralPersonData {
   height: string;
   mass: string;
   hair_color: string;
@@ -15,10 +15,6 @@ export interface Person extends BasicPersonProperties {
   eye_color: string;
   birth_year: string;
   gender: string;
-  homeworld: string;
-  species: string[];
-  starships: string[];
-  vehicles: string[];
 }
 
 export type ComparableProperty = 'mass' | 'height';

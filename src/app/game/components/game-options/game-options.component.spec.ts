@@ -1,21 +1,34 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { GameOptionsComponent } from './game-options.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
+import { GameOptionsComponent } from "./game-options.component";
+import { SharedModule } from "../../../shared/shared.module";
+import { FormControl } from "@angular/forms";
+import { By } from "@angular/platform-browser";
 
 describe('GameOptionsComponent', () => {
-  let component: GameOptionsComponent;
-  let fixture: ComponentFixture<GameOptionsComponent>;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [GameOptionsComponent]
-    });
-    fixture = TestBed.createComponent(GameOptionsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<GameOptionsComponent>;
+  const createComponent = createComponentFactory({
+    component: GameOptionsComponent,
+    imports: [SharedModule],
+    detectChanges: false
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(() => {
+    spectator = createComponent();
+
+    spectator.setInput('personProperty', new FormControl(null));
+  });
+
+  it('Should match snapshot', () => {
+    expect(spectator.fixture).toMatchSnapshot();
+  });
+
+  it('Should set attribute in ng-select', () => {
+    spectator.detectChanges();
+
+    spectator.click(spectator.debugElement.query(By.css('.mat-mdc-select-trigger')).nativeElement);
+    spectator.detectChanges();
+    spectator.click(spectator.debugElement.query(By.css('.mat-mdc-option')).nativeElement);
+
+    expect(spectator.component.personProperty.value).toEqual('mass');
   });
 });

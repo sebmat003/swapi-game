@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { BasicPersonProperties, Person } from "../../models/person.models";
+import { BasicPerson, Person } from "../../models/person.models";
 
 export const GameActions = {
   GET_RANDOM_PEOPLE: '[Game] Get random people',
@@ -21,7 +21,7 @@ export const getRandomPeopleFailure = createAction(GameActions.GET_RANDOM_PEOPLE
 
 export const getAllPeople = createAction(GameActions.GET_ALL_PEOPLE);
 export const getAllPeopleSuccess = createAction(GameActions.GET_ALL_PEOPLE_SUCCESS, props<{
-  allPeople: BasicPersonProperties[]
+  allPeople: BasicPerson[]
 }>());
 export const getAllPeopleFailure = createAction(GameActions.GET_ALL_PEOPLE_FAILURE, props<{
   error: string

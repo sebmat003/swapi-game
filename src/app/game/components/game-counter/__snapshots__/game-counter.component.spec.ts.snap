@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameCounterComponent Should match snapshot 1`] = `
+<app-game-counter
+  cdr={[Function ViewRef$1]}
+  counter={[Function Array]}
+  destroy$={[Function Subject]}
+  roundWinner$={[Function Observable]}
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col-6 text-center"
+    >
+      <h4>
+        Player 1
+      </h4>
+      <p>
+        Result: 1
+      </p>
+    </div>
+    <div
+      class="col-6 text-center"
+    >
+      <h4>
+        Player 2
+      </h4>
+      <p>
+        Result: 0
+      </p>
+    </div>
+  </div>
+</app-game-counter>
+`;

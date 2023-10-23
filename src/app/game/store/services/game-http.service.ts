@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { BasicPersonProperties, Person } from "../../models/person.models";
+import { BasicPerson, Person } from "../../models/person.models";
 import { SwapiPagedResponse, SwapiResponse } from "../../models/swapi.models";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class GameHttpService {
-  private swapiURL = 'https://www.swapi.tech/api/';
+  private swapiURL = 'https://www.swapi.tech/api';
 
   constructor(private http: HttpClient) {
   }
@@ -15,7 +15,7 @@ export class GameHttpService {
     return this.http.get<SwapiResponse<Person>>(`${this.swapiURL}/people/${number}`);
   }
 
-  getAllPeople(page = 0, limit = 100): Observable<SwapiPagedResponse<BasicPersonProperties>> {
-    return this.http.get<SwapiPagedResponse<BasicPersonProperties>>(`${this.swapiURL}/people/`, { params: { page, limit }});
+  getAllPeople(page = 0, limit = 100): Observable<SwapiPagedResponse<BasicPerson>> {
+    return this.http.get<SwapiPagedResponse<BasicPerson>>(`${this.swapiURL}/people`, { params: { page, limit }});
   }
 }
