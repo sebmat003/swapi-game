@@ -1,6 +1,6 @@
 <mat-form-field>
   <mat-label>Choose property</mat-label>
-  <mat-select [formControl]="personProperty">
-    <mat-option *ngFor="let option of ['mass', 'height']" [value]="option">{{option}}</mat-option>
+  <mat-select [attr.data-cy]="'choose-property-select'" [formControl]="personProperty">
+    <mat-option [attr.data-cy]="'choose-property-option'" *ngFor="let option of ['mass', 'height']" [value]="option">{{option}}</mat-option>
   </mat-select>
 </mat-form-field>

@@ -1,4 +1,4 @@
-<mat-card class="game-card" [class.winner]="winner">
+<mat-card [attr.data-cy]="'game-card'" class="game-card" [class.winner]="winner">
   <mat-card-content class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
     <h3>{{ person.name }}</h3>
     <app-icon [icon]="'person' + (index + 1)" [width]="200" [height]="200"></app-icon>
