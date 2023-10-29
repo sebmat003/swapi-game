@@ -16,10 +16,10 @@ describe('AppComponent', () => {
       StoreModule.forRoot({}),
     ],
     declarations: [AppComponent],
-    detectChanges: false
+    detectChanges: false,
   });
 
-  beforeEach(() => spectator = createComponent())
+  beforeEach(() => (spectator = createComponent()));
 
   it('Should match snapshot', () => {
     spectator.detectChanges();

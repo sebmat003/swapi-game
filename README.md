@@ -13,11 +13,12 @@ button that repeats the same request.
 
 Bonus points!
 These are not required, just adds to your portfolio in an interview:
+
 1. Score counter. If there are two players, left and right, show how many times each side
-has won.
+   has won.
 2. Option to select which resource to play against
 3. Use Angular Material and display the details in a card
-https://material.angular.io/components/card
+   https://material.angular.io/components/card
 
 What we're looking for
 We're interested in your code style and also best practice.

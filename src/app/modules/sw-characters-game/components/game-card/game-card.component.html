@@ -1,0 +1,25 @@
+<mat-card
+  [attr.data-cy]="'game-card'"
+  class="game-card"
+  [class.winner]="winner"
+>
+  <mat-card-content
+    class="d-flex flex-column justify-content-center align-items-center w-100 h-100"
+  >
+    <h3>{{ person.name }}</h3>
+    <app-icon
+      [icon]="'person' + (index + 1)"
+      [width]="200"
+      [height]="200"
+    ></app-icon>
+    <div class="mt-4">
+      <p>Gender {{ person.gender }}</p>
+      <p>Mass: {{ person.mass }}</p>
+      <p>Height: {{ person.height }}</p>
+      <p>Birth year: {{ person.birthYear }}</p>
+      <p>Eye color: {{ person.eyeColor }}</p>
+      <p>Skin color: {{ person.skinColor }}</p>
+      <p>Hair color: {{ person.hairColor }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

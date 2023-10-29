@@ -1,14 +1,14 @@
 import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
-import { IconComponent } from "./icon.component";
+import { IconComponent } from './icon.component';
 
 describe('IconComponent', () => {
   let spectator: Spectator<IconComponent>;
   const createComponent = createComponentFactory({
     component: IconComponent,
-    detectChanges: false
+    detectChanges: false,
   });
 
-  beforeEach(() => spectator = createComponent())
+  beforeEach(() => (spectator = createComponent()));
 
   it('Should match snapshot', () => {
     spectator.setInput('icon', 'person');
@@ -23,7 +23,11 @@ describe('IconComponent', () => {
     spectator.setInput('width', width);
     spectator.setInput('height', height);
 
-    expect(spectator.query('svg')?.getAttribute('width')).toEqual(width.toString());
-    expect(spectator.query('svg')?.getAttribute('height')).toEqual(height.toString());
-  })
+    expect(spectator.query('svg')?.getAttribute('width')).toEqual(
+      width.toString(),
+    );
+    expect(spectator.query('svg')?.getAttribute('height')).toEqual(
+      height.toString(),
+    );
+  });
 });

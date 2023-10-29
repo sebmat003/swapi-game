@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessageComponent Should match snapshot 1`] = `
+<app-error-message
+  message={[Function String]}
+>
+  <div
+    class="alert alert-danger mb-2"
+    role="alert"
+  >
+     Error occured
+  </div>
+</app-error-message>
+`;
