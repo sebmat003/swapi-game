@@ -20,14 +20,14 @@ export class GameCounterComponent implements OnInit, OnDestroy {
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.roundWinner$.pipe(takeUntil(this.destroy$)).subscribe((index) => {
       this.counter[index] += 1;
       this.cdr.detectChanges();
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.destroy$.next();
   }
 }
